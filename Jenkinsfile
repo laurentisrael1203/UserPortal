@@ -5,6 +5,8 @@ pipeline{
    def tomcatWeb = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps'
    def tomcatBin = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin'
    def tomcatStatus = ''
+   stages {
+   
    stage('SCM Checkout'){
      steps {
         snDevOpsStep()
@@ -44,4 +46,5 @@ pipeline{
          bat "startup.bat"
          sleep(time:100,unit:"SECONDS")
    }*/
+}
 }

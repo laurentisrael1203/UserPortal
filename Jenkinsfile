@@ -4,10 +4,12 @@ node{
    def tomcatBin = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
-     git 'https://github.com/laurentisrael1203/SushrutDemo.git'
+     snDevOpsStep()
+      git 'https://github.com/laurentisrael1203/UserPortal.git'
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
+      snDevOpsStep()
       def mvnHome =  tool name: 'Maven 3.6.3', type: 'maven'   
       bat "mvn package"
       }
@@ -24,6 +26,8 @@ node{
 '''
    }*/
    stage('Deploy to Tomcat'){
+      snDevOpsStep()
+      snDevOpsChange()
      bat "copy target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
      /* stage ('Start Tomcat Server') {

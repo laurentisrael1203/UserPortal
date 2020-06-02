@@ -6,7 +6,7 @@ node{
    def tomcatStatus = ''
    
    stage('SCM Checkout'){
-   snDevOpsArtifact()
+   snDevOpsStep()
       git 'https://github.com/laurentisrael1203/UserPortal.git'
      }
    stage('Compile-Package-create-war-file'){

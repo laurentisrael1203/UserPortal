@@ -15,6 +15,7 @@ node{
       def mvnHome =  tool name: 'Maven 3.6.3', type: 'maven'   
       bat "mvn package"
       }
+   
 /*   stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
                wmic process list brief | find /i "tomcat" > NUL
